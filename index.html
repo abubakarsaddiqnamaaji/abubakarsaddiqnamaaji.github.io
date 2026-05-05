@@ -8,492 +8,861 @@
   <title>Abubakar Sadiq Namaaji | Portfolio</title>
   <script src="https://cdn.tailwindcss.com"></script>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <style>
+    * {
+      scroll-behavior: smooth;
+    }
+
+    @keyframes fadeInDown {
+      from {
+        opacity: 0;
+        transform: translateY(-20px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @keyframes fadeInLeft {
+      from {
+        opacity: 0;
+        transform: translateX(-30px);
+      }
+      to {
+        opacity: 1;
+        transform: translateX(0);
+      }
+    }
+
+    @keyframes fadeInRight {
+      from {
+        opacity: 0;
+        transform: translateX(30px);
+      }
+      to {
+        opacity: 1;
+        transform: translateX(0);
+      }
+    }
+
+    @keyframes float {
+      0%, 100% {
+        transform: translateY(0);
+      }
+      50% {
+        transform: translateY(-15px);
+      }
+    }
+
+    @keyframes glow {
+      0%, 100% {
+        box-shadow: 0 0 20px rgba(59, 130, 246, 0.3);
+      }
+      50% {
+        box-shadow: 0 0 40px rgba(59, 130, 246, 0.6);
+      }
+    }
+
+    @keyframes slideInUp {
+      from {
+        opacity: 0;
+        transform: translateY(50px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @keyframes pulse-glow {
+      0% {
+        opacity: 1;
+      }
+      50% {
+        opacity: 0.7;
+      }
+      100% {
+        opacity: 1;
+      }
+    }
+
+    .animate-fade-in-down {
+      animation: fadeInDown 0.8s ease-out;
+    }
+
+    .animate-fade-in-up {
+      animation: fadeInUp 0.8s ease-out;
+    }
+
+    .animate-fade-in-left {
+      animation: fadeInLeft 0.8s ease-out;
+    }
+
+    .animate-fade-in-right {
+      animation: fadeInRight 0.8s ease-out;
+    }
+
+    .animate-float {
+      animation: float 3s ease-in-out infinite;
+    }
+
+    .animate-glow {
+      animation: glow 3s ease-in-out infinite;
+    }
+
+    .animate-slide-in-up {
+      animation: slideInUp 0.8s ease-out;
+    }
+
+    .animate-pulse-glow {
+      animation: pulse-glow 2s ease-in-out infinite;
+    }
+
+    body {
+      background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+    }
+
+    .gradient-text {
+      background: linear-gradient(135deg, #3b82f6 0%, #8b5cf6 50%, #ec4899 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .glass-effect {
+      background: rgba(30, 41, 59, 0.7);
+      backdrop-filter: blur(10px);
+      border: 1px solid rgba(148, 163, 184, 0.2);
+    }
+
+    .card-hover {
+      transition: all 0.3s ease;
+    }
+
+    .card-hover:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 20px 40px rgba(59, 130, 246, 0.2);
+    }
+
+    nav {
+      background: rgba(15, 23, 42, 0.95);
+      backdrop-filter: blur(10px);
+    }
+
+    .nav-link {
+      position: relative;
+      overflow: hidden;
+    }
+
+    .nav-link::after {
+      content: '';
+      position: absolute;
+      bottom: -2px;
+      left: -100%;
+      width: 100%;
+      height: 2px;
+      background: linear-gradient(90deg, #3b82f6, #8b5cf6);
+      transition: left 0.3s ease;
+    }
+
+    .nav-link:hover::after {
+      left: 0;
+    }
+
+    .btn-gradient {
+      background: linear-gradient(135deg, #3b82f6 0%, #8b5cf6 100%);
+      transition: all 0.3s ease;
+    }
+
+    .btn-gradient:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 10px 25px rgba(59, 130, 246, 0.4);
+    }
+
+    .section-title {
+      position: relative;
+    }
+
+    .section-title::after {
+      content: '';
+      position: absolute;
+      bottom: -10px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 60px;
+      height: 4px;
+      background: linear-gradient(90deg, #3b82f6, #8b5cf6);
+      border-radius: 2px;
+    }
+
+    @keyframes blob {
+      0%, 100% {
+        transform: translate(0, 0) scale(1);
+      }
+      33% {
+        transform: translate(30px, -50px) scale(1.1);
+      }
+      66% {
+        transform: translate(-20px, 20px) scale(0.9);
+      }
+    }
+
+    .animate-blob {
+      animation: blob 7s infinite;
+    }
+
+    .animation-delay-2000 {
+      animation-delay: 2s;
+    }
+
+    .animation-delay-4000 {
+      animation-delay: 4s;
+    }
+
+    .delay-100 {
+      animation-delay: 0.1s;
+    }
+
+    .delay-200 {
+      animation-delay: 0.2s;
+    }
+
+    .delay-300 {
+      animation-delay: 0.3s;
+    }
+  </style>
 </head>
-<body class="bg-gray-900 text-white">
-  <nav class="bg-gray-950 shadow-md z-50 fixed w-full border-b-4 border-blue-500">
-    <div class="max-w-6xl mx-auto px-6 py-4 flex justify-center items-center">
-      <div class="space-x-6 text-lg font-medium">
-        <a href="#about" class="hover:text-blue-500 transition">About</a>
-        <a href="#skills" class="hover:text-blue-500 transition">Skills</a>
-        <a href="#projects" class="hover:text-blue-500 transition">Projects</a>
-        <a href="#articles" class="hover:text-blue-500 transition">Articles</a>
+<body class="text-white">
+  <nav class="fixed w-full z-50 border-b border-blue-500 border-opacity-20">
+    <div class="max-w-6xl mx-auto px-6 py-4 flex justify-between items-center">
+      <div class="text-2xl font-bold gradient-text animate-fade-in-left">
+         
       </div>
+      <div class="space-x-8 text-lg font-medium hidden md:flex">
+        <a href="#about" class="nav-link hover:text-blue-400 transition">About</a>
+        <a href="#skills" class="nav-link hover:text-blue-400 transition">Skills</a>
+        <a href="#projects" class="nav-link hover:text-blue-400 transition">Projects</a>
+        <a href="#articles" class="nav-link hover:text-blue-400 transition">Articles</a>
+      </div>
+      <button class="md:hidden text-2xl text-blue-400">
+        <i class="fas fa-bars"></i>
+      </button>
     </div>
   </nav>
 
- <section class="min-h-screen flex items-center bg-gray-900 text-white px-6">
-  <div class="max-w-6xl mx-auto grid md:grid-cols-2 gap-10 items-center mt-20">
+ <section class="min-h-screen flex items-center bg-gradient-to-b from-slate-900 via-slate-900 to-slate-800 text-white px-6 relative overflow-hidden">
+  <!-- Animated Background Elements -->
+  <div class="absolute inset-0 overflow-hidden">
+    <div class="absolute top-20 left-20 w-72 h-72 bg-blue-500 rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-blob"></div>
+    <div class="absolute top-40 right-20 w-72 h-72 bg-purple-500 rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-blob animation-delay-2000"></div>
+    <div class="absolute -bottom-8 left-1/2 w-72 h-72 bg-pink-500 rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-blob animation-delay-4000"></div>
+  </div>
+
+  <div class="max-w-6xl mx-auto grid md:grid-cols-2 gap-10 items-center mt-20 relative z-10">
     <div>
-      <h1 class="text-4xl md:text-6xl font-bold mb-4 md:text-left">
-        Hi, I'm <span class="text-blue-500">Abubakar Saddiq Namaaji</span>
+      <h1 class="text-3xl md:text-6xl font-bold mb-6 leading-tight animate-fade-in-left">
+        Hi, I'm <span class="gradient-text">Abubakar Saddiq Namaaji</span>
       </h1>
 
-      <p class="text-xl text-gray-300 mb-6">
-       Data Annotator at RWS | Frontend Developer | AI Enthusiast
+      <p class="text-xl text-gray-300 mb-8 animate-fade-in-up leading-relaxed delay-100">
+        Data Annotator at RWS | Frontend Developer | AI Enthusiast
+      </p>
 
+      <p class="text-lg text-gray-400 mb-8 animate-fade-in-up leading-relaxed delay-200">
         I work on real-world AI systems through data annotation at RWS and build modern web applications, combining my passion for Artificial Intelligence and software development to create impactful solutions.
       </p>
 
-      <div class="flex gap-4">
-        <a href="https://drive.google.com/file/d/1cJzBQaluHxpYe9iGdrlFr81svAmlrZQl/view?usp=sharing" target="_blank" class="bg-blue-500 px-6 py-3 rounded-lg hover:bg-blue-600 transition">
-          View My CV
+      <div class="flex gap-4 animate-fade-in-up delay-300">
+        <a href="https://drive.google.com/file/d/1cJzBQaluHxpYe9iGdrlFr81svAmlrZQl/view?usp=sharing" target="_blank" class="btn-gradient px-8 py-4 rounded-lg font-semibold hover:scale-105 flex items-center gap-2">
+          <i class="fas fa-file-pdf"></i> View My CV
         </a>
-        <a href="#contact" class="border border-blue-500 px-6 py-3 rounded-lg hover:bg-blue-500 transition">
-          Contact Me
+        <a href="#contact" class="border-2 border-blue-500 px-8 py-4 rounded-lg font-semibold hover:bg-blue-500 hover:bg-opacity-10 transition-all">
+          <i class="fas fa-envelope"></i> Contact Me
         </a>
       </div>
     </div>
-    <div class="flex justify-center">
-      <img src="my-picture.png" alt="Abubakar Sadiq" class="w-64 h-74 md:w-64 md:h-74 rounded-3xl pb-5 md:pb-0 border-2 border-blue-500"/>
+    <div class="flex justify-center animate-fade-in-right">
+      <div class="relative">
+        <div class="absolute inset-0 bg-gradient-to-r from-blue-500 to-purple-500 rounded-3xl blur-2xl opacity-30 animate-pulse"></div>
+        <img src="my-picture.png" alt="Abubakar Sadiq" class="relative w-72 h-80 rounded-3xl object-cover border-2 border-blue-500 border-opacity-50 shadow-2xl animate-float"/>
+      </div>
     </div>
   </div>
 </section>
 
-<section id="about" class="bg-gray-950 text-white py-20 px-6">
-  <div class="max-w-6xl mx-auto grid md:grid-cols-2 gap-12 items-center">
-    <div class="flex justify-center">
-      <img 
-        src="p4.jpeg"
-        alt="Abubakar Sadiq"
-        class="w-72 h-72 rounded-2xl object-cover shadow-xl border border-gray-700"
-      />
-    </div>
- 
-    <div>
-  <h2 class="text-3xl md:text-4xl font-bold mb-6 text-center">
-    About <span class="text-blue-500">Me</span>
-  </h2>
-
-  <p class="text-gray-300 mb-4 leading-relaxed">
-    I'm <span class="font-semibold">Abubakar Sadiq Namaaji</span>, a frontend developer and AI enthusiast. 
-    I work as a <span class="font-semibold">Data Annotator at RWS</span>, contributing to real-world AI systems, 
-    and enjoy building modern web applications and AI solutions that solve real-world problems.
-  </p>
-
-  <p class="text-gray-400 mb-6 leading-relaxed">
-    I also contributed <span class="font-semibold">500+ Hausa sentence recordings</span> to the 
-    <span class="font-semibold">Masakhane AI project</span>, supporting speech recognition and text-to-speech models. 
-    My goal is to become a next-generation AI leader, creating impactful tools that positively influence the world.
-  </p>
-
-  <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 text-sm text-gray-300">
-    <p><span class="text-blue-500 font-medium">Name:</span> Abubakar Sadiq Namaaji</p>
-    <p><span class="text-blue-500 font-medium">Role:</span> Data Annotator & AI Enthusiast</p>
-    <p><span class="text-blue-500 font-medium">Company:</span> RWS Group</p>
-    <p><span class="text-blue-500 font-medium">Skills:</span> Python, HTML, Tailwind CSS, JavaScript, AI Fundamentals</p>
-    <p><span class="text-blue-500 font-medium">Interests:</span> AI & Application Development</p>
-  </div>
-
+<section id="about" class="py-20 px-6 relative bg-gradient-to-b from-slate-800 to-slate-900">
+  <div class="max-w-6xl mx-auto">
+    <div class="grid md:grid-cols-2 gap-12 items-center">
+      <div class="flex justify-center animate-fade-in-left">
+        <div class="relative">
+          <div class="absolute inset-0 bg-gradient-to-r from-blue-500 to-purple-500 rounded-2xl blur-xl opacity-25 animate-pulse"></div>
+          <img 
+            src="p4.jpeg"
+            alt="Abubakar Sadiq"
+            class="relative w-72 h-72 rounded-2xl object-cover shadow-2xl border border-blue-500 border-opacity-30"
+          />
+        </div>
+      </div>
    
+      <div class="animate-fade-in-right">
+        <h2 class="text-4xl md:text-5xl font-bold mb-8 text-center">
+          About <span class="gradient-text">Me</span>
+        </h2>
 
-  <a href="#projects"
-     class="inline-block mt-8 bg-blue-500 px-6 py-3 rounded-lg hover:bg-blue-600 transition duration-300 shadow-md hover:shadow-lg">
-    View My Projects
-  </a>
-</div>
-</div>
+        <p class="text-gray-300 mb-6 leading-relaxed text-lg">
+          I'm <span class="font-semibold text-blue-400">Abubakar Sadiq Namaaji</span>, a frontend developer and AI enthusiast. 
+          I work as a <span class="font-semibold text-blue-400">Data Annotator at RWS</span>, contributing to real-world AI systems, 
+          and enjoy building modern web applications and AI solutions that solve real-world problems.
+        </p>
+
+        <p class="text-gray-400 mb-8 leading-relaxed text-lg">
+          I also contributed <span class="font-semibold text-purple-400">500+ Hausa sentence recordings</span> to the 
+          <span class="font-semibold text-purple-400">Masakhane AI project</span>, supporting speech recognition and text-to-speech models. 
+          My goal is to become a next-generation AI leader, creating impactful tools that positively influence the world.
+        </p>
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 text-gray-300 mb-8">
+          <div class="glass-effect p-4 rounded-lg card-hover">
+            <p><span class="text-blue-400 font-semibold">Name:</span><br/>Abubakar Sadiq Namaaji</p>
+          </div>
+          <div class="glass-effect p-4 rounded-lg card-hover">
+            <p><span class="text-blue-400 font-semibold">Role:</span><br/>Data Annotator & AI Enthusiast</p>
+          </div>
+          <div class="glass-effect p-4 rounded-lg card-hover">
+            <p><span class="text-blue-400 font-semibold">Company:</span><br/>RWS Group</p>
+          </div>
+          <div class="glass-effect p-4 rounded-lg card-hover">
+            <p><span class="text-blue-400 font-semibold">Interests:</span><br/>AI & Application Development</p>
+          </div>
+        </div>
+
+        <a href="#projects"
+           class="btn-gradient px-8 py-4 rounded-lg font-semibold inline-block hover:scale-105 transition-transform">
+          <i class="fas fa-arrow-down mr-2"></i>View My Projects
+        </a>
+      </div>
+    </div>
+  </div>
 </section>
 
-<section id="ai-experience" class="bg-gray-950 text-white py-20 px-6">
-  <div class="max-w-6xl mx-auto text-center">
-    <h2 class="text-3xl md:text-4xl font-bold mb-6">
-      AI <span class="text-blue-500">Experience</span>
+<section id="ai-experience" class="py-20 px-6 bg-gradient-to-b from-slate-900 to-slate-800 relative overflow-hidden">
+  <div class="max-w-6xl mx-auto">
+    <h2 class="text-4xl md:text-5xl font-bold text-center mb-16  animate-fade-in-down">
+      AI <span class="gradient-text">Experience</span>
     </h2>
 
-    <p class="text-gray-300 mb-12 leading-relaxed">
-      I contributed <span class="font-semibold">500+ Hausa sentence recordings</span> to the 
-      <span class="font-semibold">Masakhane AI project</span>, supporting AI research in speech recognition 
-      and text-to-speech for low-resource African languages. I also work as a <span class="font-semibold">Data Annotator at RWS</span>, contributing to real-world AI systems.
+    <p class="text-center text-gray-300 mb-16 text-lg leading-relaxed max-w-3xl mx-auto animate-fade-in-up">
+      I contributed <span class="font-semibold text-purple-400">500+ Hausa sentence recordings</span> to the 
+      <span class="font-semibold text-purple-400">Masakhane AI project</span>, supporting AI research in speech recognition 
+      and text-to-speech for low-resource African languages. I also work as a <span class="font-semibold text-blue-400">Data Annotator at RWS</span>.
     </p>
 
-    
-    <div class="grid md:grid-cols-3 gap-6">
-      <div class="bg-gray-800 p-6 rounded-xl text-center shadow hover:shadow-blue-500/40 transition">
-  <p class="text-xl font-semibold mb-2">Data Annotation</p>
-  <p class="text-gray-400 text-sm mt-2">
-    Annotating and labeling datasets to train AI models accurately, including Hausa speech and text data.
-  </p>
-</div>
-      <div class="bg-gray-800 p-6 rounded-xl shadow hover:shadow-blue-500/40 transition">
-        <p class="text-xl font-semibold mb-2">Data Collection</p>
-        <p class="text-gray-400 text-sm">Gathered and annotated hundreds of Hausa audio samples for AI training datasets.</p>
+    <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+      <div class="glass-effect p-8 rounded-xl card-hover animate-fade-in-up text-center transform transition-all duration-300 hover:border-blue-500 hover:border-opacity-50">
+        <div class="text-4xl mb-4 text-blue-400"><i class="fas fa-tags"></i></div>
+        <p class="text-xl font-semibold mb-3">Data Annotation</p>
+        <p class="text-gray-300 text-sm">
+          Annotating and labeling datasets to train AI models accurately, including Hausa speech and text data.
+        </p>
       </div>
-      <div class="bg-gray-800 p-6 rounded-xl shadow hover:shadow-blue-500/40 transition">
-        <p class="text-xl font-semibold mb-2">Speech Recognition</p>
-        <p class="text-gray-400 text-sm">Helped build models that accurately transcribe Hausa speech to text.</p>
+      <div class="glass-effect p-8 rounded-xl card-hover animate-fade-in-up text-center transform transition-all duration-300 hover:border-blue-500 hover:border-opacity-50" style="animation-delay: 0.1s">
+        <div class="text-4xl mb-4 text-purple-400"><i class="fas fa-database"></i></div>
+        <p class="text-xl font-semibold mb-3">Data Collection</p>
+        <p class="text-gray-300 text-sm">Gathered and annotated hundreds of Hausa audio samples for AI training datasets.</p>
       </div>
-      <div class="bg-gray-800 p-6 rounded-xl shadow hover:shadow-blue-500/40 transition">
-        <p class="text-xl font-semibold mb-2">Text-to-Speech</p>
-        <p class="text-gray-400 text-sm">Assisted in creating AI models that speak Hausa naturally and clearly.</p>
+      <div class="glass-effect p-8 rounded-xl card-hover animate-fade-in-up text-center transform transition-all duration-300 hover:border-blue-500 hover:border-opacity-50" style="animation-delay: 0.2s">
+        <div class="text-4xl mb-4 text-pink-400"><i class="fas fa-microphone"></i></div>
+        <p class="text-xl font-semibold mb-3">Speech Recognition</p>
+        <p class="text-gray-300 text-sm">Helped build models that accurately transcribe Hausa speech to text.</p>
+      </div>
+      <div class="glass-effect p-8 rounded-xl card-hover animate-fade-in-up text-center transform transition-all duration-300 hover:border-blue-500 hover:border-opacity-50" style="animation-delay: 0.3s">
+        <div class="text-4xl mb-4 text-green-400"><i class="fas fa-volume-up"></i></div>
+        <p class="text-xl font-semibold mb-3">Text-to-Speech</p>
+        <p class="text-gray-300 text-sm">Assisted in creating AI models that speak Hausa naturally and clearly.</p>
       </div>
     </div>
   </div>
 </section>
 
 <!-- SKILLS SECTION -->
-
-<section id="skills" class="bg-gray-900 text-white py-20 px-6">
+<section id="skills" class="py-20 px-6 bg-gradient-to-b from-slate-800 to-slate-900 relative">
   <div class="max-w-6xl mx-auto">
-
-    <h2 class="text-3xl md:text-4xl font-bold text-center mb-12">
-      My <span class="text-blue-500">Skills</span>
+    <h2 class="text-4xl md:text-5xl font-bold text-center mb-16   animate-fade-in-down">
+      My <span class="gradient-text">Skills</span>
     </h2>
 
     <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
-
       <!-- Skill Card -->
-      <div class="bg-gray-800 p-6 rounded-xl text-center shadow hover:shadow-blue-500/40 transition">
-        <p class="text-xl font-semibold">Python</p>
-        <p class="text-gray-400 text-sm mt-2">Programming Language</p>
+      <div class="glass-effect p-6 rounded-xl text-center card-hover animate-fade-in-up group overflow-hidden relative">
+        <div class="absolute inset-0 bg-gradient-to-r from-blue-500 to-purple-500 opacity-0 group-hover:opacity-10 transition-opacity duration-300"></div>
+        <div class="relative z-10">
+          <div class="text-3xl mb-3 text-blue-400"><i class="fab fa-python"></i></div>
+          <p class="text-lg font-semibold">Python</p>
+          <p class="text-gray-400 text-xs mt-1">Programming</p>
+        </div>
       </div>
 
-      <div class="bg-gray-800 p-6 rounded-xl text-center shadow hover:shadow-blue-500/40 transition">
-        <p class="text-xl font-semibold">AI & Machine Learning</p>
-        <p class="text-gray-400 text-sm mt-2">Intelligent Systems</p>
+      <div class="glass-effect p-6 rounded-xl text-center card-hover animate-fade-in-up group overflow-hidden relative" style="animation-delay: 0.05s">
+        <div class="absolute inset-0 bg-gradient-to-r from-purple-500 to-pink-500 opacity-0 group-hover:opacity-10 transition-opacity duration-300"></div>
+        <div class="relative z-10">
+          <div class="text-3xl mb-3 text-purple-400"><i class="fas fa-brain"></i></div>
+          <p class="text-lg font-semibold">AI & ML</p>
+          <p class="text-gray-400 text-xs mt-1">Intelligent Systems</p>
+        </div>
       </div>
 
-      <div class="bg-gray-800 p-6 rounded-xl text-center shadow hover:shadow-blue-500/40 transition">
-        <p class="text-xl font-semibold">Git & GitHub</p>
-        <p class="text-gray-400 text-sm mt-2">Version Control</p>
+      <div class="glass-effect p-6 rounded-xl text-center card-hover animate-fade-in-up group overflow-hidden relative" style="animation-delay: 0.1s">
+        <div class="absolute inset-0 bg-gradient-to-r from-pink-500 to-blue-500 opacity-0 group-hover:opacity-10 transition-opacity duration-300"></div>
+        <div class="relative z-10">
+          <div class="text-3xl mb-3 text-pink-400"><i class="fab fa-git-alt"></i></div>
+          <p class="text-lg font-semibold">Git & GitHub</p>
+          <p class="text-gray-400 text-xs mt-1">Version Control</p>
+        </div>
       </div>
 
-      <div class="bg-gray-800 p-6 rounded-xl text-center shadow hover:shadow-blue-500/40 transition">
-        <p class="text-xl font-semibold">Html & CSS</p>
-        <p class="text-gray-400 text-sm mt-2">Structure & Styling</p>
+      <div class="glass-effect p-6 rounded-xl text-center card-hover animate-fade-in-up group overflow-hidden relative" style="animation-delay: 0.15s">
+        <div class="absolute inset-0 bg-gradient-to-r from-green-500 to-blue-500 opacity-0 group-hover:opacity-10 transition-opacity duration-300"></div>
+        <div class="relative z-10">
+          <div class="text-3xl mb-3 text-green-400"><i class="fab fa-html5"></i></div>
+          <p class="text-lg font-semibold">HTML & CSS</p>
+          <p class="text-gray-400 text-xs mt-1">Structure & Style</p>
+        </div>
       </div>
 
-      <div class="bg-gray-800 p-6 rounded-xl text-center shadow hover:shadow-blue-500/40 transition">
-        <p class="text-xl font-semibold">Tailwind CSS</p>
-        <p class="text-gray-400 text-sm mt-2">Responsive Design</p>
+      <div class="glass-effect p-6 rounded-xl text-center card-hover animate-fade-in-up group overflow-hidden relative" style="animation-delay: 0.2s">
+        <div class="absolute inset-0 bg-gradient-to-r from-blue-500 to-cyan-500 opacity-0 group-hover:opacity-10 transition-opacity duration-300"></div>
+        <div class="relative z-10">
+          <div class="text-3xl mb-3 text-blue-300"><i class="fab fa-css3"></i></div>
+          <p class="text-lg font-semibold">Tailwind CSS</p>
+          <p class="text-gray-400 text-xs mt-1">Responsive Design</p>
+        </div>
       </div>
 
-        <div class="bg-gray-800 p-6 rounded-xl text-center shadow hover:shadow-blue-500/40 transition">
-          <p class="text-xl font-semibold">JavaScript</p>
-          <p class="text-gray-400 text-sm mt-2">Web Interactivity</p>
+      <div class="glass-effect p-6 rounded-xl text-center card-hover animate-fade-in-up group overflow-hidden relative" style="animation-delay: 0.25s">
+        <div class="absolute inset-0 bg-gradient-to-r from-yellow-500 to-orange-500 opacity-0 group-hover:opacity-10 transition-opacity duration-300"></div>
+        <div class="relative z-10">
+          <div class="text-3xl mb-3 text-yellow-400"><i class="fab fa-js"></i></div>
+          <p class="text-lg font-semibold">JavaScript</p>
+          <p class="text-gray-400 text-xs mt-1">Web Interactivity</p>
+        </div>
       </div>
 
-      <div class="bg-gray-800 p-6 rounded-xl text-center shadow hover:shadow-blue-500/40 transition">
-          <p class="text-xl font-semibold">Data Annotation</p>
-          <p class="text-gray-400 text-sm mt-2">Data Labeling</p>
+      <div class="glass-effect p-6 rounded-xl text-center card-hover animate-fade-in-up group overflow-hidden relative" style="animation-delay: 0.3s">
+        <div class="absolute inset-0 bg-gradient-to-r from-red-500 to-pink-500 opacity-0 group-hover:opacity-10 transition-opacity duration-300"></div>
+        <div class="relative z-10">
+          <div class="text-3xl mb-3 text-red-400"><i class="fas fa-tag"></i></div>
+          <p class="text-lg font-semibold">Data Annotation</p>
+          <p class="text-gray-400 text-xs mt-1">Data Labeling</p>
+        </div>
       </div>
 
-      <div class="bg-gray-800 p-6 rounded-xl text-center shadow hover:shadow-blue-500/40 transition">
-          <p class="text-xl font-semibold">AI Data Collection</p>
-          <p class="text-gray-400 text-sm mt-2">Gathering and Preparing AI Training Data</p>
+      <div class="glass-effect p-6 rounded-xl text-center card-hover animate-fade-in-up group overflow-hidden relative" style="animation-delay: 0.35s">
+        <div class="absolute inset-0 bg-gradient-to-r from-indigo-500 to-purple-500 opacity-0 group-hover:opacity-10 transition-opacity duration-300"></div>
+        <div class="relative z-10">
+          <div class="text-3xl mb-3 text-indigo-400"><i class="fas fa-database"></i></div>
+          <p class="text-lg font-semibold">Data Collection</p>
+          <p class="text-gray-400 text-xs mt-1">Data Preparation</p>
+        </div>
       </div>
-
+    </div>
   </div>
-   
- 
-
 </section>
-<section id="projects" class="bg-gray-950 text-white py-20 px-6">
+<section id="projects" class="py-20 px-6 bg-gradient-to-b from-slate-900 to-slate-800 relative overflow-hidden">
   <div class="max-w-6xl mx-auto">
-
-    <h2 class="text-3xl md:text-4xl font-bold text-center mb-12">
-      My <span class="text-blue-500">Projects</span>
+    <h2 class="text-4xl md:text-5xl font-bold text-center mb-16  animate-fade-in-down">
+      My <span class="gradient-text">Projects</span>
     </h2>
 
-    <div class="grid md:grid-cols-3 gap-4">
-
-      <!--1-->
-      <div class="flex bg-gray-800 rounded-xl overflow-hidden shadow hover:shadow-blue-500/40 transition">
-        <div class="font-bold mt-9 p-2 pl-5">
-            May,2026
+    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+      <!-- Project Card 1 -->
+      <div class="glass-effect rounded-xl overflow-hidden card-hover animate-fade-in-up group">
+        <div class="bg-gradient-to-r from-blue-500 to-blue-600 p-4 group-hover:from-blue-600 group-hover:to-blue-700 transition-all duration-300">
+          <p class="text-sm font-semibold text-white">May 2026</p>
         </div>
-        <div class="p-5">
-            <a href="#" class="text-xl text-blue-400 hover:underline font-semibold mb-2">
-                 Calculator App
-            </a>
-            <p class="text-gray-400 text-sm mb-4">
-                A simple calculator application built with Python and Tkinter. It allows users to perform basic arithmetic operations.
-            </p>
-        </div>
-    </div>
-
-      <div class="flex bg-gray-800 rounded-xl overflow-hidden shadow hover:shadow-blue-500/40 transition">
-        <div class="font-bold mt-9 p-2 pl-5">
-            May,2026
-        </div>
-        <div class="p-5">
-            <a href="#" class="text-xl text-blue-400 hover:underline font-semibold mb-2">
-                 Weather App
-            </a>
-            <p class="text-gray-400 text-sm mb-4">
-                A simple weather application built with Python and Tkinter. It allows users to check the current weather conditions for any location by fetching data from a weather API.
-            </p>
-        </div>
-    </div>
-
-      <div class="flex bg-gray-800 rounded-xl overflow-hidden shadow hover:shadow-blue-500/40 transition">
-        <div class="font-bold mt-9 p-2 pl-5">
-            Apr,2026
-        </div>
-        <div class="p-5">
-            <a href="#" class="text-xl text-blue-400 hover:underline font-semibold mb-2">
-                🗣️ Masakhane AI – Hausa Pronunciation Dataset
-            </a>
-            <p class="text-gray-400 text-sm mb-4">
-                Contributed 500+ linguistically accurate Hausa sentence recordings to the Masakhane AI project, supporting AI research in speech recognition and text-to-speech applications.
-            </p>
-        </div>
-    </div>
-
-      <div class="flex bg-gray-800 rounded-xl overflow-hidden shadow hover:shadow-blue-500/40 transition">
-        <div class="font-bold mt-9 p-2 pl-5">
-            Feb,2025
-        </div>
-        <div class="p-5">
-          <a href="https://medium.com/@namaajiabubakarsadiq/building-a-simple-chatbot-in-python-for-beginners-2028cde2f4c9" class="text-xl text-blue-400 hover:underline font-semibold mb-2">🤖 Building a Simple Chatbot in Python (For Beginners)</a> 
-          <p class="text-gray-400 text-sm mb-4">
-            A beginner-friendly guide to creating a simple chatbot using Python, covering basic concepts and implementation steps.
-          </p>
-        </div>
-        </div>
-
-
-      <div class="flex bg-gray-800 rounded-xl overflow-hidden shadow hover:shadow-blue-500/40 transition">
-        <div class="font-bold mt-9 p-2 pl-5">
-            jan,2025
-        </div>
-        <div class="p-5">
-          <a href="https://github.com/abubakarsaddiqnamaaji" class="text-xl text-blue-400 hover:underline font-semibold mb-2">Treasure Island</a> 
-          <p class="text-gray-400 text-sm mb-4">
-            A Project that simulates a treasure hunt game using Python.
+        <div class="p-6">
+          <a href="https://github.com/abubakarsaddiqnamaaji/Capculator-Project.git" target="_blank" class="text-lg text-blue-400 hover:text-blue-300 font-semibold mb-3 block group-hover:translate-x-2 transition-transform">
+            <i class="fas fa-calculator mr-2"></i>Calculator App
+          </a>
+          <p class="text-gray-300 text-sm leading-relaxed">
+            A simple calculator application built with Python and Tkinter. It allows users to perform basic arithmetic operations.
           </p>
         </div>
       </div>
 
-      <div class="flex bg-gray-800 rounded-xl overflow-hidden shadow hover:shadow-blue-500/40 transition">
-        <div class="font-bold mt-9 p-2 pl-5">
-            jan,2025
+      <!-- Project Card 2 -->
+      <div class="glass-effect rounded-xl overflow-hidden card-hover animate-fade-in-up group" style="animation-delay: 0.05s">
+        <div class="bg-gradient-to-r from-purple-500 to-purple-600 p-4 group-hover:from-purple-600 group-hover:to-purple-700 transition-all duration-300">
+          <p class="text-sm font-semibold text-white">May 2026</p>
         </div>
-        <div class="p-5">
-          <a href="https://github.com/abubakarsaddiqnamaaji" class="text-xl text-blue-400 hover:underline font-semibold mb-2">Todo App</a> 
-          <p class="text-gray-400 text-sm mb-4">
-            An todo app that helps users manage tasks effectively. using HTML, CSS, and JavaScript.
+        <div class="p-6">
+          <a href="https://github.com/abubakarsaddiqnamaaji/weather-app.git" target="_blank" class="text-lg text-purple-400 hover:text-purple-300 font-semibold mb-3 block group-hover:translate-x-2 transition-transform">
+            <i class="fas fa-cloud mr-2"></i>Weather App
+          </a>
+          <p class="text-gray-300 text-sm leading-relaxed">
+            A simple weather application built with Python and Tkinter. It fetches real-time weather data from a weather API.
           </p>
         </div>
       </div>
 
-      <div class="flex bg-gray-800 rounded-xl overflow-hidden shadow hover:shadow-blue-500/40 transition">
-        <div class="font-bold mt-9 p-2 pl-5">
-            jan,2025
+      <!-- Project Card 3 -->
+      <div class="glass-effect rounded-xl overflow-hidden card-hover animate-fade-in-up group" style="animation-delay: 0.1s">
+        <div class="bg-gradient-to-r from-pink-500 to-pink-600 p-4 group-hover:from-pink-600 group-hover:to-pink-700 transition-all duration-300">
+          <p class="text-sm font-semibold text-white">Apr 2026</p>
         </div>
-        <div class="p-5">
-          <a href="https://github.com/abubakarsaddiqnamaaji" class="text-xl text-blue-400 hover:underline font-semibold mb-2">Calculator</a> 
-          <p class="text-gray-400 text-sm mb-4">
-            An calculator app that performs basic arithmetic operations using python.
+        <div class="p-6">
+          <a href="https://www.masakhane.io/" target="_blank" class="text-lg text-pink-400 hover:text-pink-300 font-semibold mb-3 block group-hover:translate-x-2 transition-transform">
+            <i class="fas fa-microphone mr-2"></i>Masakhane AI - Hausa Dataset
+          </a>
+          <p class="text-gray-300 text-sm leading-relaxed">
+            Contributed 500+ linguistically accurate Hausa sentence recordings to the Masakhane AI project.
           </p>
         </div>
       </div>
 
-      <div class="flex bg-gray-800 rounded-xl overflow-hidden shadow hover:shadow-blue-500/40 transition">
-        <div class="font-bold mt-9 p-2 pl-5">
-            jan,2025
+      <!-- Project Card 4 -->
+      <div class="glass-effect rounded-xl overflow-hidden card-hover animate-fade-in-up group" style="animation-delay: 0.15s">
+        <div class="bg-gradient-to-r from-green-500 to-green-600 p-4 group-hover:from-green-600 group-hover:to-green-700 transition-all duration-300">
+          <p class="text-sm font-semibold text-white">Feb 2025</p>
         </div>
-        <div class="p-5">
-          <a href="https://github.com/abubakarsaddiqnamaaji" class="text-xl text-blue-400 hover:underline font-semibold mb-2">Caesar Cipher</a> 
-          <p class="text-gray-400 text-sm mb-4">
+        <div class="p-6">
+          <a href="https://medium.com/@namaajiabubakarsadiq/building-a-simple-chatbot-in-python-for-beginners-2028cde2f4c9" target="_blank" class="text-lg text-green-400 hover:text-green-300 font-semibold mb-3 block group-hover:translate-x-2 transition-transform">
+            <i class="fas fa-robot mr-2"></i>Simple Chatbot
+          </a>
+          <p class="text-gray-300 text-sm leading-relaxed">
+            A beginner-friendly guide to creating a simple chatbot using Python, covering basic concepts and implementation.
+          </p>
+        </div>
+      </div>
+
+      <!-- Project Card 5 -->
+      <div class="glass-effect rounded-xl overflow-hidden card-hover animate-fade-in-up group" style="animation-delay: 0.2s">
+        <div class="bg-gradient-to-r from-yellow-500 to-yellow-600 p-4 group-hover:from-yellow-600 group-hover:to-yellow-700 transition-all duration-300">
+          <p class="text-sm font-semibold text-white">Jan 2025</p>
+        </div>
+        <div class="p-6">
+          <a href="https://github.com/abubakarsaddiqnamaaji" target="_blank" class="text-lg text-yellow-400 hover:text-yellow-300 font-semibold mb-3 block group-hover:translate-x-2 transition-transform">
+            <i class="fas fa-map mr-2"></i>Treasure Island
+          </a>
+          <p class="text-gray-300 text-sm leading-relaxed">
+            A project that simulates a treasure hunt game using Python.
+          </p>
+        </div>
+      </div>
+
+      <!-- Project Card 6 -->
+      <div class="glass-effect rounded-xl overflow-hidden card-hover animate-fade-in-up group" style="animation-delay: 0.25s">
+        <div class="bg-gradient-to-r from-indigo-500 to-indigo-600 p-4 group-hover:from-indigo-600 group-hover:to-indigo-700 transition-all duration-300">
+          <p class="text-sm font-semibold text-white">Jan 2025</p>
+        </div>
+        <div class="p-6">
+          <a href="https://github.com/abubakarsaddiqnamaaji" target="_blank" class="text-lg text-indigo-400 hover:text-indigo-300 font-semibold mb-3 block group-hover:translate-x-2 transition-transform">
+            <i class="fas fa-tasks mr-2"></i>Todo App
+          </a>
+          <p class="text-gray-300 text-sm leading-relaxed">
+            An todo app that helps users manage tasks effectively using HTML, CSS, and JavaScript.
+          </p>
+        </div>
+      </div>
+
+      <!-- Project Card 7 -->
+      <div class="glass-effect rounded-xl overflow-hidden card-hover animate-fade-in-up group" style="animation-delay: 0.3s">
+        <div class="bg-gradient-to-r from-red-500 to-red-600 p-4 group-hover:from-red-600 group-hover:to-red-700 transition-all duration-300">
+          <p class="text-sm font-semibold text-white">Jan 2025</p>
+        </div>
+        <div class="p-6">
+          <a href="https://github.com/abubakarsaddiqnamaaji" target="_blank" class="text-lg text-red-400 hover:text-red-300 font-semibold mb-3 block group-hover:translate-x-2 transition-transform">
+            <i class="fas fa-calculator mr-2"></i>Advanced Calculator
+          </a>
+          <p class="text-gray-300 text-sm leading-relaxed">
+            A calculator app that performs basic arithmetic operations using python.
+          </p>
+        </div>
+      </div>
+
+      <!-- Project Card 8 -->
+      <div class="glass-effect rounded-xl overflow-hidden card-hover animate-fade-in-up group" style="animation-delay: 0.35s">
+        <div class="bg-gradient-to-r from-cyan-500 to-cyan-600 p-4 group-hover:from-cyan-600 group-hover:to-cyan-700 transition-all duration-300">
+          <p class="text-sm font-semibold text-white">Jan 2025</p>
+        </div>
+        <div class="p-6">
+          <a href="https://github.com/abubakarsaddiqnamaaji" target="_blank" class="text-lg text-cyan-400 hover:text-cyan-300 font-semibold mb-3 block group-hover:translate-x-2 transition-transform">
+            <i class="fas fa-lock mr-2"></i>Caesar Cipher
+          </a>
+          <p class="text-gray-300 text-sm leading-relaxed">
             A caesar cipher app that encrypts and decrypts messages using python.
           </p>
         </div>
       </div>
 
-      <div class="flex bg-gray-800 rounded-xl overflow-hidden shadow hover:shadow-blue-500/40 transition">
-        <div class="font-bold mt-9 p-2 pl-5">
-            jan,2025
+      <!-- Project Card 9 -->
+      <div class="glass-effect rounded-xl overflow-hidden card-hover animate-fade-in-up group" style="animation-delay: 0.4s">
+        <div class="bg-gradient-to-r from-orange-500 to-orange-600 p-4 group-hover:from-orange-600 group-hover:to-orange-700 transition-all duration-300">
+          <p class="text-sm font-semibold text-white">Jan 2025</p>
         </div>
-        <div class="p-5">
-          <a href="https://github.com/abubakarsaddiqnamaaji" class="text-xl text-blue-400 hover:underline font-semibold mb-2">Blackjack game</a> 
-          <p class="text-gray-400 text-sm mb-4">
+        <div class="p-6">
+          <a href="https://github.com/abubakarsaddiqnamaaji" target="_blank" class="text-lg text-orange-400 hover:text-orange-300 font-semibold mb-3 block group-hover:translate-x-2 transition-transform">
+            <i class="fas fa-heart mr-2"></i>Blackjack Game
+          </a>
+          <p class="text-gray-300 text-sm leading-relaxed">
             A game that simulates the classic blackjack card game using python.
           </p>
         </div>
       </div>
-
     </div>
-
   </div>
 </section>
-<section id="articles" class="bg-gray-950 text-white py-20 px-6">
+<section id="articles" class="py-20 px-6 bg-gradient-to-b from-slate-800 to-slate-900 relative overflow-hidden">
   <div class="max-w-6xl mx-auto">
-    <h2 class="text-3xl md:text-4xl font-bold text-center mb-12">
-      My <span class="text-blue-500">Articles</span>
+    <h2 class="text-4xl md:text-5xl font-bold text-center mb-16 animate-fade-in-down">
+      My <span class="gradient-text">Articles</span>
     </h2>
-    <div class="grid md:grid-cols-3 gap-8">
-      <div class="flex bg-gray-800 rounded-xl overflow-hidden shadow hover:shadow-blue-500/40 transition">
-        <div class="font-bold mt-9 p-2 pl-5">
-            04/Apr/2026
+    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+      <!-- Article 1 -->
+      <div class="glass-effect rounded-xl overflow-hidden card-hover animate-fade-in-up group">
+        <div class="bg-gradient-to-r from-blue-500 to-blue-600 p-4 group-hover:from-blue-600 group-hover:to-blue-700 transition-all">
+          <p class="text-sm font-semibold text-white">04 Apr 2026</p>
         </div>
-        <div class="p-4">
-          <a href="https://medium.com/@namaajiabubakarsadiq/finish-what-you-start-by-peter-hollins-how-this-book-totally-changed-me-2e64352a8e59" class="text-xl text-blue-400 hover:underline font-semibold mb-2">Finish What You Start By Peter Hollins, How This Book Totally Changed Me</a> 
-        </div>
-      </div>
-      <div class="flex bg-gray-800 rounded-xl overflow-hidden shadow hover:shadow-blue-500/40 transition">
-        <div class="font-bold mt-9 p-2 pl-5">
-            12/Feb/2026
-        </div>
-        <div class="p-4">
-          <a href="https://medium.com/@namaajiabubakarsadiq/building-a-simple-chatbot-in-python-for-beginners-2028cde2f4c9" class="text-xl text-blue-400 hover:underline font-semibold mb-2">🤖 Building a Simple Chatbot in Python (For Beginners)</a> 
-        </div>
-      </div>
-      <div class="flex bg-gray-800 rounded-xl overflow-hidden shadow hover:shadow-blue-500/40 transition">
-        <div class="font-bold mt-9 p-2 pl-5">
-            8/oct/2025
-        </div>
-        <div class="p-4">
-          <a href="https://medium.com/@namaajiabubakarsadiq/honored-to-deliver-a-speech-on-the-value-of-time-during-our-graduation-ceremony-at-adamu-namaaji-a0577316ab55" class="text-xl text-blue-400 hover:underline font-semibold mb-2">Honored to deliver a speech on the value of time during our graduation ceremony at Adamu Namaaji Science and Islamic Secondary School.</a> 
+        <div class="p-6">
+          <a href="https://medium.com/@namaajiabubakarsadiq/finish-what-you-start-by-peter-hollins-how-this-book-totally-changed-me-2e64352a8e59" target="_blank" class="text-lg text-blue-400 hover:text-blue-300 font-semibold block group-hover:translate-x-2 transition-transform">
+            <i class="fas fa-book mr-2"></i>Finish What You Start
+          </a>
+          <p class="text-gray-400 text-sm mt-2">By Peter Hollins - How This Book Changed Me</p>
         </div>
       </div>
 
-      <div class="flex bg-gray-800 rounded-xl overflow-hidden shadow hover:shadow-blue-500/40 transition">
-        <div class="font-bold mt-9 p-2 pl-5">
-            20/Dec/2025
+      <!-- Article 2 -->
+      <div class="glass-effect rounded-xl overflow-hidden card-hover animate-fade-in-up group" style="animation-delay: 0.05s">
+        <div class="bg-gradient-to-r from-purple-500 to-purple-600 p-4 group-hover:from-purple-600 group-hover:to-purple-700 transition-all">
+          <p class="text-sm font-semibold text-white">12 Feb 2026</p>
         </div>
-        <div class="p-5">
-          <a href="https://medium.com/@namaajiabubakarsadiq/my-10-days-of-javascript-journey-from-fundamentals-to-advanced-concepts-41c69fa0c32a" class="text-xl text-blue-400 hover:underline font-semibold mb-2">My 10 Days of JavaScript Journey — From Fundamentals to Advanced Concepts</a> 
-        </div>
-      </div>
-
-      <div class="flex bg-gray-800 rounded-xl overflow-hidden shadow hover:shadow-blue-500/40 transition">
-        <div class="font-bold mt-9 p-2 pl-5">
-            8/Nov/2025
-        </div>
-        <div class="p-5">
-          <a href="https://medium.com/@namaajiabubakarsadiq/introducing-namaajiquran-app-a-simple-and-beautiful-islamic-app-for-everyone-376b092eb929" class="text-xl text-blue-400 hover:underline font-semibold mb-2">Introducing NamaajiIslamic App— A Simple and Beautiful Islamic App for Everyone</a> 
+        <div class="p-6">
+          <a href="https://medium.com/@namaajiabubakarsadiq/building-a-simple-chatbot-in-python-for-beginners-2028cde2f4c9" target="_blank" class="text-lg text-purple-400 hover:text-purple-300 font-semibold block group-hover:translate-x-2 transition-transform">
+            <i class="fas fa-robot mr-2"></i>Simple Chatbot in Python
+          </a>
+          <p class="text-gray-400 text-sm mt-2">For Beginners</p>
         </div>
       </div>
 
-      <div class="flex bg-gray-800 rounded-xl overflow-hidden shadow hover:shadow-blue-500/40 transition">
-        <div class="font-bold mt-9 p-2 pl-5">
-            4/Nov/2024
+      <!-- Article 3 -->
+      <div class="glass-effect rounded-xl overflow-hidden card-hover animate-fade-in-up group" style="animation-delay: 0.1s">
+        <div class="bg-gradient-to-r from-pink-500 to-pink-600 p-4 group-hover:from-pink-600 group-hover:to-pink-700 transition-all">
+          <p class="text-sm font-semibold text-white">08 Oct 2025</p>
         </div>
-        <div class="p-5">
-          <a href="https://medium.com/@namaajiabubakarsadiq/unlocking-data-science-my-first-two-weeks-with-arewads-7cdd3e6ab8ac" class="text-xl text-blue-400 hover:underline font-semibold mb-2">Unlocking Data Science: My First Two Weeks with ArewaDS</a>
-        </div>
-      </div>
-
-      <div class="flex bg-gray-800 rounded-xl overflow-hidden shadow hover:shadow-blue-500/40 transition">
-        <div class="font-bold mt-9 p-2 pl-5">
-            28/aug/2025
-        </div>
-        <div class="p-5">
-          <a href="https://medium.com/@namaajiabubakarsadiq/day-8-of-100-days-of-code-functions-with-inputs-and-the-caesar-cipher-7cdd3e6ab8ac" class="text-xl text-blue-400 hover:underline font-semibold mb-2">Day 8 of 100 Days Of Code — Functions with Inputs and the Caesar Cipher</a> 
+        <div class="p-6">
+          <a href="https://medium.com/@namaajiabubakarsadiq/honored-to-deliver-a-speech-on-the-value-of-time-during-our-graduation-ceremony-at-adamu-namaaji-a0577316ab55" target="_blank" class="text-lg text-pink-400 hover:text-pink-300 font-semibold block group-hover:translate-x-2 transition-transform">
+            <i class="fas fa-graduation-cap mr-2"></i>Graduation Speech
+          </a>
+          <p class="text-gray-400 text-sm mt-2">The Value of Time</p>
         </div>
       </div>
 
-      <div class="flex bg-gray-800 rounded-xl overflow-hidden shadow hover:shadow-blue-500/40 transition">
-        <div class="font-bold mt-9 p-2 pl-5">
-            19/0ct/2025
+      <!-- Article 4 -->
+      <div class="glass-effect rounded-xl overflow-hidden card-hover animate-fade-in-up group" style="animation-delay: 0.15s">
+        <div class="bg-gradient-to-r from-green-500 to-green-600 p-4 group-hover:from-green-600 group-hover:to-green-700 transition-all">
+          <p class="text-sm font-semibold text-white">20 Dec 2025</p>
         </div>
-        <div class="p-5">
-          <a href="https://medium.com/@namaajiabubakarsadiq/my-journey-to-mastering-css-from-confusion-to-confidence-fc68b047d36e" class="text-xl text-blue-400 hover:underline font-semibold mb-2">My Journey to Mastering CSS: From Confusion to Confidence</a> 
-        </div>
-      </div>
-
-      <div class="flex bg-gray-800 rounded-xl overflow-hidden shadow hover:shadow-blue-500/40 transition">
-        <div class="font-bold mt-9 p-2 pl-5">
-            31/aug/2025
-        </div>
-        <div class="p-5">
-          <a href="https://medium.com/@namaajiabubakarsadiq/day-11-of-100-days-of-code-the-blackjack-capstone-project-7cdd3e6ab8ac" class="text-xl text-blue-400 hover:underline font-semibold mb-2">Day 11 of 100 Days of code- The Blackjack Capstone Project</a> 
+        <div class="p-6">
+          <a href="https://medium.com/@namaajiabubakarsadiq/my-10-days-of-javascript-journey-from-fundamentals-to-advanced-concepts-41c69fa0c32a" target="_blank" class="text-lg text-green-400 hover:text-green-300 font-semibold block group-hover:translate-x-2 transition-transform">
+            <i class="fas fa-code mr-2"></i>JavaScript Journey
+          </a>
+          <p class="text-gray-400 text-sm mt-2">10 Days - Fundamentals to Advanced</p>
         </div>
       </div>
 
-      <div class="flex bg-gray-800 rounded-xl overflow-hidden shadow hover:shadow-blue-500/40 transition">
-        <div class="font-bold mt-9 p-2 pl-5">
-            20/Dec/2025
+      <!-- Article 5 -->
+      <div class="glass-effect rounded-xl overflow-hidden card-hover animate-fade-in-up group" style="animation-delay: 0.2s">
+        <div class="bg-gradient-to-r from-yellow-500 to-yellow-600 p-4 group-hover:from-yellow-600 group-hover:to-yellow-700 transition-all">
+          <p class="text-sm font-semibold text-white">08 Nov 2025</p>
         </div>
-        <div class="p-5">
-          <a href="https://medium.com/@namaajiabubakarsadiq/day-22-of-100daysofcode-building-the-classic-pong-game-with-python-7cdd3e6ab8ac" class="text-xl text-blue-400 hover:underline font-semibold mb-2">Day 22 of #100DaysOfCode — Building the Classic Pong Game with Python</a> 
+        <div class="p-6">
+          <a href="https://medium.com/@namaajiabubakarsadiq/introducing-namaajiquran-app-a-simple-and-beautiful-islamic-app-for-everyone-376b092eb929" target="_blank" class="text-lg text-yellow-400 hover:text-yellow-300 font-semibold block group-hover:translate-x-2 transition-transform">
+            <i class="fas fa-mobile mr-2"></i>NamaajiIslamic App
+          </a>
+          <p class="text-gray-400 text-sm mt-2">A Beautiful Islamic App</p>
+        </div>
+      </div>
+
+      <!-- Article 6 -->
+      <div class="glass-effect rounded-xl overflow-hidden card-hover animate-fade-in-up group" style="animation-delay: 0.25s">
+        <div class="bg-gradient-to-r from-indigo-500 to-indigo-600 p-4 group-hover:from-indigo-600 group-hover:to-indigo-700 transition-all">
+          <p class="text-sm font-semibold text-white">04 Nov 2024</p>
+        </div>
+        <div class="p-6">
+          <a href="https://medium.com/@namaajiabubakarsadiq/unlocking-data-science-my-first-two-weeks-with-arewads-7cdd3e6ab8ac" target="_blank" class="text-lg text-indigo-400 hover:text-indigo-300 font-semibold block group-hover:translate-x-2 transition-transform">
+            <i class="fas fa-chart-line mr-2"></i>Data Science Journey
+          </a>
+          <p class="text-gray-400 text-sm mt-2">First Two Weeks with ArewaDS</p>
         </div>
       </div>
 
-      <div class="flex bg-gray-800 rounded-xl overflow-hidden shadow hover:shadow-blue-500/40 transition">
-        <div class="font-bold mt-9 p-2 pl-5">
-            19/Oct/2025
+      <!-- Article 7 -->
+      <div class="glass-effect rounded-xl overflow-hidden card-hover animate-fade-in-up group" style="animation-delay: 0.3s">
+        <div class="bg-gradient-to-r from-red-500 to-red-600 p-4 group-hover:from-red-600 group-hover:to-red-700 transition-all">
+          <p class="text-sm font-semibold text-white">28 Aug 2025</p>
         </div>
-        <div class="p-5">
-          <a href="https://medium.com/@namaajiabubakarsadiq/building-my-login-form-with-html-css-a-step-forward-in-my-web-journey-7cdd3e6ab8ac" class="text-xl text-blue-400 hover:underline font-semibold mb-2">🔐 Building My Login Form with HTML & CSS: A Step Forward in My Web Journey</a> 
+        <div class="p-6">
+          <a href="https://medium.com/@namaajiabubakarsadiq/day-8-of-100-days-of-code-functions-with-inputs-and-the-caesar-cipher-7cdd3e6ab8ac" target="_blank" class="text-lg text-red-400 hover:text-red-300 font-semibold block group-hover:translate-x-2 transition-transform">
+            <i class="fas fa-code mr-2"></i>#100DaysOfCode - Day 8
+          </a>
+          <p class="text-gray-400 text-sm mt-2">Functions & Caesar Cipher</p>
         </div>
       </div>
-  </div>
-  <!-- <div class="mt-10 flex justify-center rounded-full border-2 border-blue-500 w-12 h-12 mx-auto items-center hover:bg-blue-500  transition animate-bounce">
-    <a href="" class="text-center"><i class="fas fa-chevron-down text-blue-500 text-center hover:text-black"></i></a>
-  </div> -->
-</section>
 
-<section id="contact" class="bg-gray-900 text-white py-20 px-6">
-  <div class="max-w-4xl mx-auto text-center">
+      <!-- Article 8 -->
+      <div class="glass-effect rounded-xl overflow-hidden card-hover animate-fade-in-up group" style="animation-delay: 0.35s">
+        <div class="bg-gradient-to-r from-cyan-500 to-cyan-600 p-4 group-hover:from-cyan-600 group-hover:to-cyan-700 transition-all">
+          <p class="text-sm font-semibold text-white">19 Oct 2025</p>
+        </div>
+        <div class="p-6">
+          <a href="https://medium.com/@namaajiabubakarsadiq/my-journey-to-mastering-css-from-confusion-to-confidence-fc68b047d36e" target="_blank" class="text-lg text-cyan-400 hover:text-cyan-300 font-semibold block group-hover:translate-x-2 transition-transform">
+            <i class="fas fa-palette mr-2"></i>Mastering CSS
+          </a>
+          <p class="text-gray-400 text-sm mt-2">From Confusion to Confidence</p>
+        </div>
+      </div>
 
-    <h2 class="text-3xl md:text-4xl font-bold mb-6">
-      Contact <span class="text-blue-500">Me</span>
-    </h2>
+      <!-- Article 9 -->
+      <div class="glass-effect rounded-xl overflow-hidden card-hover animate-fade-in-up group" style="animation-delay: 0.4s">
+        <div class="bg-gradient-to-r from-orange-500 to-orange-600 p-4 group-hover:from-orange-600 group-hover:to-orange-700 transition-all">
+          <p class="text-sm font-semibold text-white">31 Aug 2025</p>
+        </div>
+        <div class="p-6">
+          <a href="https://medium.com/@namaajiabubakarsadiq/day-11-of-100-days-of-code-the-blackjack-capstone-project-7cdd3e6ab8ac" target="_blank" class="text-lg text-orange-400 hover:text-orange-300 font-semibold block group-hover:translate-x-2 transition-transform">
+            <i class="fas fa-cards mr-2"></i>Blackjack Game
+          </a>
+          <p class="text-gray-400 text-sm mt-2">Capstone Project</p>
+        </div>
+      </div>
 
-    <p class="text-gray-400 mb-10">
-      Feel free to reach out to me for collaborations, opportunities, or questions.
-    </p>
+      <!-- Article 10 -->
+      <div class="glass-effect rounded-xl overflow-hidden card-hover animate-fade-in-up group" style="animation-delay: 0.45s">
+        <div class="bg-gradient-to-r from-rose-500 to-rose-600 p-4 group-hover:from-rose-600 group-hover:to-rose-700 transition-all">
+          <p class="text-sm font-semibold text-white">20 Dec 2025</p>
+        </div>
+        <div class="p-6">
+          <a href="https://medium.com/@namaajiabubakarsadiq/day-22-of-100daysofcode-building-the-classic-pong-game-with-python-7cdd3e6ab8ac" target="_blank" class="text-lg text-rose-400 hover:text-rose-300 font-semibold block group-hover:translate-x-2 transition-transform">
+            <i class="fas fa-gamepad mr-2"></i>Pong Game
+          </a>
+          <p class="text-gray-400 text-sm mt-2">Day 22 #100DaysOfCode</p>
+        </div>
+      </div>
 
-    <div class=" gap-6 bg-gray-800 p-6 rounded-xl shadow hover:shadow-blue-500/40 transition justify-center ">
-  <div class="flex justify-center gap-5 text-3xl">
-
-    <a href="https://github.com/abubakarsaddiqnamaaji" class="hover:text-blue-500 hover:scale-125 transition-transform duration-300">
-      <i class="fa-brands fa-github"></i>
-    </a>
-
-    <a href="https://www.linkedin.com/in/abubakar-sadiq-namaaji-54b9b2333" class="hover:text-blue-500 hover:scale-125 transition-transform duration-300">
-      <i class="fa-brands fa-linkedin-in"></i>
-    </a>
-
-    <a href="mailto:namaajiabubakarsadiq@gmail.com" class="hover:text-blue-500 hover:scale-125 transition-transform duration-300">
-      <i class="fa-solid fa-envelope"></i>
-    </a>
-
-    <a href="https://wa.me/2347030218743" class="hover:text-green-500 hover:scale-125 transition-transform duration-300">
-      <i class="fa-brands fa-whatsapp"></i>
-    </a>
-
-    <a href="https://x.com/Alsayyu_Namaji1" class="hover:text-blue-400 hover:scale-125 transition-transform duration-300">
-      <i class="fa-brands fa-x-twitter"></i>
-    </a>
-
-    <a href="https://instagram.com/__alsayyu_namaaji" class="hover:text-red-400 hover:scale-125 transition-transform duration-300">
-      <i class="fa-brands fa-instagram"></i>
-    </a>
-
-  </div>
-</div>
-
-
-  </div>
-</section>
-<section class="bg-gray-900 text-white py-10 px-6">
-  <div class="max-w-4xl mx-auto text-center border-blue-500 border p-5 rounded-2xl hover:shadow-blue-500">
-    <h3 class="text-md font-semibold mb-4">
-      Thank you for visiting my website!
-    </h3>
-    <div class="flex justify-center mb-4">
-      <a href="https://info.flagcounter.com/EQmt"><img src="https://s01.flagcounter.com/count2/EQmt/bg_FFFFFF/txt_000000/border_CCCCCC/columns_5/maxflags_15/viewers_0/labels_1/pageviews_1/flags_0/percent_0/" alt="Flag Counter" border="0"></a>
+      <!-- Article 11 -->
+      <div class="glass-effect rounded-xl overflow-hidden card-hover animate-fade-in-up group" style="animation-delay: 0.5s">
+        <div class="bg-gradient-to-r from-teal-500 to-teal-600 p-4 group-hover:from-teal-600 group-hover:to-teal-700 transition-all">
+          <p class="text-sm font-semibold text-white">19 Oct 2025</p>
+        </div>
+        <div class="p-6">
+          <a href="https://medium.com/@namaajiabubakarsadiq/building-my-login-form-with-html-css-a-step-forward-in-my-web-journey-7cdd3e6ab8ac" target="_blank" class="text-lg text-teal-400 hover:text-teal-300 font-semibold block group-hover:translate-x-2 transition-transform">
+            <i class="fas fa-lock mr-2"></i>Login Form
+          </a>
+          <p class="text-gray-400 text-sm mt-2">HTML & CSS Web Journey</p>
+        </div>
+      </div>
     </div>
-    <p class="text-gray-400 text-sm">
-      <strong>📊 Tracking visitors since January 2026</strong>
-    </p>
   </div>
 </section>
 
+<section id="contact" class="py-20 px-6 bg-gradient-to-b from-slate-900 to-slate-900 relative overflow-hidden">
+  <div class="max-w-4xl mx-auto">
+    <h2 class="text-4xl md:text-5xl font-bold text-center mb-8   animate-fade-in-down">
+      Contact <span class="gradient-text">Me</span>
+    </h2>
 
-<footer class="bg-gray-950 text-gray-400 py-8 px-6">
-  <div class="max-w-6xl mx-auto text-center">
-
-    <p class="mb-4">
-      © 2026 Abubakar Saddiq Namaaji. All rights reserved  Last updated: May 2, 2026.
+    <p class="text-gray-300 text-center mb-12 text-lg animate-fade-in-up">
+      Feel free to reach out to me for collaborations, opportunities, or questions. Let's connect!
     </p>
 
+    <div class="glass-effect p-10 rounded-2xl card-hover animate-fade-in-up">
+      <div class="flex justify-center flex-wrap gap-8">
+        <a href="https://github.com/abubakarsaddiqnamaaji" target="_blank" class="group flex flex-col items-center gap-3 hover:scale-110 transition-transform duration-300">
+          <div class="w-16 h-16 rounded-full bg-gradient-to-br from-gray-700 to-gray-800 flex items-center justify-center text-3xl group-hover:from-blue-500 group-hover:to-purple-600 transition-all duration-300 shadow-lg group-hover:shadow-blue-500/50">
+            <i class="fab fa-github text-white"></i>
+          </div>
+          <span class="text-sm font-semibold text-gray-300 group-hover:text-blue-400">GitHub</span>
+        </a>
+
+        <a href="https://www.linkedin.com/in/abubakar-sadiq-namaaji-54b9b2333" target="_blank" class="group flex flex-col items-center gap-3 hover:scale-110 transition-transform duration-300">
+          <div class="w-16 h-16 rounded-full bg-gradient-to-br from-gray-700 to-gray-800 flex items-center justify-center text-3xl group-hover:from-blue-500 group-hover:to-cyan-600 transition-all duration-300 shadow-lg group-hover:shadow-blue-500/50">
+            <i class="fab fa-linkedin-in text-white"></i>
+          </div>
+          <span class="text-sm font-semibold text-gray-300 group-hover:text-blue-400">LinkedIn</span>
+        </a>
+
+        <a href="mailto:namaajiabubakarsadiq@gmail.com" class="group flex flex-col items-center gap-3 hover:scale-110 transition-transform duration-300">
+          <div class="w-16 h-16 rounded-full bg-gradient-to-br from-gray-700 to-gray-800 flex items-center justify-center text-3xl group-hover:from-red-500 group-hover:to-pink-600 transition-all duration-300 shadow-lg group-hover:shadow-red-500/50">
+            <i class="fas fa-envelope text-white"></i>
+          </div>
+          <span class="text-sm font-semibold text-gray-300 group-hover:text-red-400">Email</span>
+        </a>
+
+        <a href="https://wa.me/2347030218743" target="_blank" class="group flex flex-col items-center gap-3 hover:scale-110 transition-transform duration-300">
+          <div class="w-16 h-16 rounded-full bg-gradient-to-br from-gray-700 to-gray-800 flex items-center justify-center text-3xl group-hover:from-green-500 group-hover:to-emerald-600 transition-all duration-300 shadow-lg group-hover:shadow-green-500/50">
+            <i class="fab fa-whatsapp text-white"></i>
+          </div>
+          <span class="text-sm font-semibold text-gray-300 group-hover:text-green-400">WhatsApp</span>
+        </a>
+
+        <a href="https://x.com/Alsayyu_Namaji1" target="_blank" class="group flex flex-col items-center gap-3 hover:scale-110 transition-transform duration-300">
+          <div class="w-16 h-16 rounded-full bg-gradient-to-br from-gray-700 to-gray-800 flex items-center justify-center text-3xl group-hover:from-blue-400 group-hover:to-blue-600 transition-all duration-300 shadow-lg group-hover:shadow-blue-400/50">
+            <i class="fab fa-x-twitter text-white"></i>
+          </div>
+          <span class="text-sm font-semibold text-gray-300 group-hover:text-blue-400">Twitter</span>
+        </a>
+
+        <a href="https://instagram.com/__alsayyu_namaaji" target="_blank" class="group flex flex-col items-center gap-3 hover:scale-110 transition-transform duration-300">
+          <div class="w-16 h-16 rounded-full bg-gradient-to-br from-gray-700 to-gray-800 flex items-center justify-center text-3xl group-hover:from-pink-500 group-hover:to-red-600 transition-all duration-300 shadow-lg group-hover:shadow-pink-500/50">
+            <i class="fab fa-instagram text-white"></i>
+          </div>
+          <span class="text-sm font-semibold text-gray-300 group-hover:text-pink-400">Instagram</span>
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="py-12 px-6 bg-slate-900 relative">
+  <div class="max-w-4xl mx-auto">
+    <div class="glass-effect p-8 rounded-2xl text-center border border-blue-500 border-opacity-30 animate-fade-in-up hover:border-opacity-50 transition-all duration-300">
+      <h3 class="text-lg font-semibold mb-4 text-blue-400">
+        <i class="fas fa-heart text-red-500 mr-2 animate-pulse"></i> Thank you for visiting!
+      </h3>
+      <div class="flex justify-center mb-4">
+        <a href="https://info.flagcounter.com/EQmt" target="_blank" class="hover:opacity-75 transition-opacity">
+          <img src="https://s01.flagcounter.com/count2/EQmt/bg_FFFFFF/txt_000000/border_CCCCCC/columns_5/maxflags_15/viewers_0/labels_1/pageviews_1/flags_0/percent_0/" alt="Flag Counter" class="rounded-lg"/>
+        </a>
+      </div>
+      <p class="text-gray-400 text-sm">
+        <strong class="text-blue-400">📊 Tracking visitors since January 2026</strong>
+      </p>
+    </div>
+  </div>
+</section>
+
+<footer class="bg-slate-950 text-gray-400 py-10 px-6 border-t border-blue-500 border-opacity-20">
+  <div class="max-w-3xl mx-auto text-center">
+    <p class="mb-2 animate-fade-in-up">
+      © 2026 Abubakar Saddiq Namaaji. All rights reserved.
+    </p>
+    <p class="text-sm animate-fade-in-up" style="animation-delay: 0.1s">
+      <i class="fas fa-heart text-red-500 animate-pulse"></i> Last updated: May 5, 2026
+    </p>
   </div>
 </footer>
-<a href="#" class="fixed bottom-6 right-6 bg-blue-500 text-white px-4 py-2 rounded-full shadow hover:bg-blue-600">
-  ↑
+<a href="#" class="fixed bottom-6 right-6 btn-gradient text-white px-5 py-4 rounded-full shadow-lg z-50 hover:shadow-2xl flex items-center justify-center text-lg animate-fade-in-right" title="Back to top">
+  <i class="fas fa-arrow-up"></i>
 </a>
 
 </body>

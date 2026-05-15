@@ -276,11 +276,11 @@
       </h1>
 
       <p class="text-xl text-gray-300 mb-8 animate-fade-in-up leading-relaxed delay-100">
-        Data Annotator at RWS | Frontend Developer | AI Enthusiast
+        Data Annotator | Frontend Developer | AI Enthusiast
       </p>
 
       <p class="text-lg text-gray-400 mb-8 animate-fade-in-up leading-relaxed delay-200">
-        I work on real-world AI systems through data annotation at RWS and build modern web applications, combining my passion for Artificial Intelligence and software development to create impactful solutions.
+       I work on real-world AI systems through data annotation, multilingual speech evaluation, and AI quality assessment.
       </p>
 
       <div class="flex gap-4 animate-fade-in-up delay-300">
@@ -486,7 +486,23 @@
 
     <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
       <!-- Project Card 1 -->
-       <div class="glass-effect rounded-xl overflow-hidden card-hover animate-fade-in-up group">
+   <!-- Project Card - HumanSignal -->
+<div class="glass-effect rounded-xl overflow-hidden card-hover animate-fade-in-up group" style="animation-delay: 0.45s">
+  <div class="bg-gradient-to-r from-emerald-500 to-emerald-600 p-4 group-hover:from-emerald-600 group-hover:to-emerald-700 transition-all duration-300">
+    <p class="text-sm font-semibold text-white">May 2026</p>
+  </div>
+
+  <div class="p-6">
+    <a href="https://humansignal.com/" target="_blank" class="text-lg text-emerald-400 hover:text-emerald-300 font-semibold mb-3 block group-hover:translate-x-2 transition-transform">
+      <i class="fas fa-language mr-2"></i>English-Hausa Speech AI Evaluation
+    </a>
+
+    <p class="text-gray-300 text-sm leading-relaxed">
+      Worked on AI speech-to-speech translation evaluation using the HumanSignal platform, reviewing English-to-Hausa translations for meaning preservation, pronunciation quality, speech naturalness, and audio consistency to support multilingual AI systems.
+    </p>
+  </div>
+</div>    
+  <div class="glass-effect rounded-xl overflow-hidden card-hover animate-fade-in-up group">
   <div class="bg-gradient-to-r from-cyan-500 to-cyan-600 p-4 group-hover:from-cyan-600 group-hover:to-cyan-700 transition-all duration-300">
     <p class="text-sm font-semibold text-white">May 2026</p>
   </div>
@@ -878,6 +894,27 @@
 <a href="#" class="fixed bottom-6 right-6 btn-gradient text-white px-5 py-4 rounded-full shadow-lg z-50 hover:shadow-2xl flex items-center justify-center text-lg animate-fade-in-right" title="Back to top">
   <i class="fas fa-arrow-up"></i>
 </a>
+<script>
+ 
+  const menuBtn = document.querySelector('.fa-bars').parentElement;
 
+  const mobileMenu = document.createElement('div');
+  mobileMenu.className =
+    'fixed top-20 left-0 w-full bg-slate-900 border-t border-blue-500 border-opacity-20 hidden flex-col text-center py-6 space-y-4 z-40';
+
+  mobileMenu.innerHTML = `
+    <a href="#about" class="block hover:text-blue-400">About</a>
+    <a href="#skills" class="block hover:text-blue-400">Skills</a>
+    <a href="#projects" class="block hover:text-blue-400">Projects</a>
+    <a href="#articles" class="block hover:text-blue-400">Articles</a>
+    <a href="#contact" class="block hover:text-blue-400">Contact</a>
+  `;
+
+  document.body.appendChild(mobileMenu);
+
+  menuBtn.addEventListener('click', () => {
+    mobileMenu.classList.toggle('hidden');
+  });
+</script>
 </body>
 </html>

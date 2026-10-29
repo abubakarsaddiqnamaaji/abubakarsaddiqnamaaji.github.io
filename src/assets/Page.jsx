@@ -353,7 +353,7 @@ function Page() {
             className="display-font text-lg font-extrabold tracking-normal text-white"
             href="#top"
           >
-            Abubakar<span className="accent">.</span>
+            Abubakar 
           </a>
           <div className="hidden items-center gap-7 md:flex">
             {navItems.map(([label, href]) => (
@@ -416,7 +416,7 @@ function Page() {
             </p>
             <h1 className="display-font max-w-3xl text-5xl font-extrabold leading-[1.08] text-white sm:text-6xl lg:text-7xl">
               Hi, I&apos;m{" "}
-              <span className="accent">Abubakar Sadiq Namaaji.</span>
+              <span className="accent">Abubakar Saddiq Namaaji.</span>
             </h1>
             <p className="mt-6 text-lg font-medium text-slate-200 md:text-xl">
               Data Annotator <span className="accent">/</span> Frontend
@@ -457,9 +457,9 @@ function Page() {
                 className="aspect-[4/5] w-full object-cover"
               />
               <div className="absolute -bottom-4 -left-4 surface border line-border px-4 py-3">
-                <span className="accent text-xs font-bold uppercase">500+</span>
+                <span className="accent text-xs font-bold uppercase">Sayyid</span>
                 <p className="mt-1 text-xs text-slate-300">
-                  Hausa recordings contributed
+                  Abubakar Sadiq Namaaji
                 </p>
               </div>
               <span className="absolute -right-3 top-8 h-12 w-1 bg-lime-300" />
